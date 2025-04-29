@@ -1,8 +1,21 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import ProductForm from "./pages/productForm";
+import ProductList from "./pages/productList";
+
 function App() {
   return (
-    <div>
-      <h1>hello world</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/product" />} />
+        <Route path="/product" element={<ProductList />} />
+        <Route path="/product/:id" element={<ProductForm />} />
+      </Routes>
+    </Router>
   );
 }
 
